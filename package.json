@@ -15,7 +15,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:webpack": "webpack"
+    "build:webpack": "webpack",
+    "build:dev": "webpack-dev-server --config ./webpack.dev.config.js",
+    "build:dll": "./webpack.dll.config.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,8 +41,12 @@
     "@babel/preset-react": "7.7.4",
     "babel-loader": "8.0.6",
     "css-loader": "^3.2.1",
+    "file-loader": "5.0.2",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "0.8.0",
+    "optimize-css-assets-webpack-plugin": "5.0.3",
+    "style-loader": "1.0.1",
+    "terser-webpack-plugin": "2.2.2",
     "webpack": "4.41.2",
     "webpack-cli": "3.3.10",
     "webpack-dev-server": "3.9.0"

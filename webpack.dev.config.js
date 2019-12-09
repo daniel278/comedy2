@@ -1,40 +1,44 @@
 const path = require('path');
 const webpack = require('webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
         app: path.resolve(__dirname, 'src', 'index.js')
     },
-    output: {
+    output:{
         path: path.resolve(__dirname, 'dist'),
-        filename: 'js/[name].[hash].js'
+        filename: 'js/[name].js',
+        chunkFilename: 'js/[id].[chunkhash].js'
     },
-    mode: 'production',
+    mode: "development",
+    devServer: {
+        hot: true,
+        port: 8080,
+        open: true
+    },
     module: {
         rules: [
             {
                 test: /\.js$/,
                 use: 'babel-loader',
-                exclude: /node-modules/
+                exclude: /node_modules/
             },
             {
                 test: /\.css$/,
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader
-                    },
+                    'style-loader',
                     'css-loader'
                 ]
+            },
+            {
+                test: /\.(png|svg)$/,
+                use: 'file-loader'
             }
         ]
     },
     plugins: [
-        new MiniCssExtractPlugin({
-            filename: 'css/[name].[hash].css',
-            chunkFilename: 'css/[id].[hash].css'
-        }),
+        new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'public', 'index.html')
         })
