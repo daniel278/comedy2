@@ -7,6 +7,7 @@ import home_icon from './assets/img/home_icon_naranja.png';
 import stand_up_icon from './assets/img/stand_up_icon_2.png';
 import etc_icon from './assets/img/etc_icon.png';
 import cado from './assets/img/cado_logo.png';
+import comediante_recomendado from './assets/img/comediantes/camilo_sanchez.jpg';
 
 
 function App() {
@@ -29,15 +30,20 @@ function App() {
         </div>
       </header>
       <div id='body'>
-        <div class="recomendacion card text-center">
-          <div class="card-header">
+        <div className="recomendacion card text-center">
+          <div className="card-header">
             Recomendación de la semana
           </div>
-          <div class="recomendacion_body card-body">
+          <div className="recomendacion_body card-body">
+            <div className="perfil_comediante_recomendado">
+              <div>Camilo Sanchez</div>
+              <div><a href="https://www.instagram.com/dejemequieto/?hl=es-la">@dejemequieto</a></div>
+              <div><img className="foto_comediante_recomendado" src = { comediante_recomendado }></img></div>
+            </div>
             <iframe id='ytplayer' src="https://www.youtube.com/embed/_AAqUamNQA0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div class="card-footer">
-            <a href="https://www.youtube.com/watch?v=_AAqUamNQA0" class="btn btn-danger">Ver en youtube</a>
+            <a href="https://www.youtube.com/watch?v=_AAqUamNQA0" className="btn btn-danger">Ver en youtube</a>
           </div>
         </div>
       </div>

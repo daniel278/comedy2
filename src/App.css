@@ -1,6 +1,5 @@
 @media (min-width: 576px) { 
   body{
-  background-color: red; 
   }
 }
 
@@ -18,7 +17,13 @@
 }
 
 @media (min-width: 992px) { 
+  .perfil_comediante_recomendado{
+    display: initial !important;
+  }
+
   .recomendacion_body{
+    padding-top: 0;
+    display: inline-flex;
     height: auto !important;
     padding-bottom: 0 !important;
     position: initial !important;
@@ -119,4 +124,15 @@
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+/*Comediante*/
+.foto_comediante_recomendado{
+  border-radius: 50%;
+}
+
+.perfil_comediante_recomendado{
+  width: 33%;
+  padding-top: 65px;
+  display: none;
 }
