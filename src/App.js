@@ -3,6 +3,11 @@ import './App.css';
 import logo_blanco_svg from './assets/img/logo/yula_blanco.svg';
 import logo_negro_svg from './assets/img/logo/yula_negro.svg';
 import logo_svg from './assets/img/logo/yula.svg';
+import home_icon from './assets/img/home_icon_naranja.png';
+import stand_up_icon from './assets/img/stand_up_icon_2.png';
+import etc_icon from './assets/img/etc_icon.png';
+import cado from './assets/img/cado_logo.png';
+
 
 function App() {
   return (
@@ -23,14 +28,27 @@ function App() {
           </nav>
         </div>
       </header>
+      <div id='body'>
+        <div class="recomendacion card text-center">
+          <div class="card-header">
+            Recomendación de la semana
+          </div>
+          <div class="recomendacion_body card-body">
+            <iframe id='ytplayer' src="https://www.youtube.com/embed/_AAqUamNQA0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="card-footer">
+            <a href="https://www.youtube.com/watch?v=_AAqUamNQA0" class="btn btn-danger">Ver en youtube</a>
+          </div>
+        </div>
+      </div>
       <footer>
         <div id="footer_cell">
           <nav className="footer_nav_cell">
             <ul>
-              <li><a>Home</a></li>
-              <li><a>Stand Up</a></li>
-              <li><a>CADO</a></li>
-              <li><a>Otros</a></li>
+              <li><a><img src={ home_icon } width="30px"></img></a></li>
+              <li><a><img src={ stand_up_icon } width="30px"></img></a></li>
+              <li><a><img src={ cado } width="30px"></img></a></li>
+              <li><a><img src={ etc_icon } width="30px"></img></a></li>
             </ul>
           </nav>
         </div>
