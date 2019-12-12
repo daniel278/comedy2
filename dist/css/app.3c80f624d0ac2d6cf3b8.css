@@ -1,0 +1,184 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@media (min-height: 700px){
+
+}
+
+@media (min-width: 576px) { 
+  #body{
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (min-width: 768px) { 
+  
+
+  #cabecera_pc, #cabecera_pc nav, #cabecera_pc ul {
+    display: inline-flex !important;
+  }
+  .cabecera_celular{
+    display: none;
+  }
+}
+
+@media (min-width: 992px) { 
+  .curador_picks iframe{
+    position: initial !important;
+    width: 640px !important;
+    height: 240px !important;
+  }
+
+  #footer_cell {
+    display: none;
+  }
+  
+  .fila_1{
+    display: inline-flex;
+    width: 100%;
+  }
+  .perfil_comediante_recomendado{
+    display: initial !important;
+  }
+
+  .recomendacion_body{
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    display: inline-flex;
+    height: auto !important;
+    padding-bottom: 0 !important;
+    position: initial !important;
+    overflow: auto !important;
+  }
+  
+  .recomendacion iframe{
+    position: initial !important;
+    width: 640px !important;
+    height: 350px !important;
+  }
+}
+
+@media (min-width: 1200px) { 
+}
+
+/* Header para computador */
+.logo_cabecera_pc{
+  margin-left: 0.5em
+}
+
+#cabecera_pc li{
+  list-style: none;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  margin-top: 18px;
+  font-size: 1.5em;
+}
+
+#cabecera_pc li:hover{
+  color: grey
+}
+
+#cabecera_pc{
+  width: 100%;
+  display: none;
+  justify-content: center;
+  padding: 1em;
+  background-color: #fc9d5b;
+  font-family: 'Permanent Marker', cursive;
+}
+
+#cabecera ul{
+  display: inline-flex;
+  text-align: center;
+}
+
+#cabecera_pc nav{
+  justify-content: center;
+  display: inline-flex;
+}
+
+/*Header para celular*/
+
+.cabecera_celular{
+  margin-top: 3.3em;
+  width: 100%;
+  text-align: center;
+}
+
+/*Footer para celular*/
+
+#footer_cell{
+  background-color: white;
+  border-top: 4px solid #fc6404;
+  font-family: 'Permanent Marker', cursive;
+  position: fixed;
+  bottom: 0;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  color: #fc6404;
+  padding-bottom: 1em;
+}
+
+.footer_nav_cell ul{
+  display: inline-flex;
+  text-align: center;
+  padding-left: 0;
+  padding-top: 0.5em;
+}
+
+.footer_nav_cell ul li{
+  list-style: none;
+  margin: 1em 1.5em;
+}
+
+/* Body */
+#body{
+  margin-bottom: 106px;
+}
+
+.recomendacion_body{
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+iframe{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*Comediante*/
+.foto_comediante_recomendado{
+  border-radius: 50%;
+}
+
+.perfil_comediante_recomendado{
+  width: 33%;
+  padding-top: 65px;
+  display: none;
+}
+
+/*Seccion del curador*/
+
+.curador_picks{
+  text-align: center;
+  margin-top: 1em;
+  border-top: 2px solid rgba(0, 0, 0, .125);
+}

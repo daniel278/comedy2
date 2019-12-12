@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        app: path.resolve(__dirname, 'src', 'index.js')
+        app: path.resolve(__dirname, 'src', 'index.js'),
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -27,6 +27,10 @@ module.exports = {
                     },
                     'css-loader'
                 ]
+            },
+            {
+                test: /\.(png|svg|jpg)$/,
+                use: 'file-loader'
             }
         ]
     },
