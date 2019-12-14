@@ -133,6 +133,7 @@
 /* Body */
 #body{
   margin-bottom: 106px;
+  text-align: center;
 }
 
 .recomendacion_body{
@@ -167,4 +168,12 @@ iframe{
   text-align: center;
   margin-top: 1em;
   border-top: 2px solid rgba(0, 0, 0, .125);
+}
+
+
+
+/*Stand up*/
+
+.boton_buscarMas{
+  width: 100%;
 }

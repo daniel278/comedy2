@@ -22,28 +22,10 @@ class Video
     }
 }
 
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
-
-
-class Stand extends Component{
-    render(){
-        return(
-            <div>
-                <div id="body">
-                    <div className="card">
-                        <div className="card-header text-center">Te lo recomendamos</div>
-                    </div>
-                    <div id="xd" className="card contenido">
+function Recomendaciones() {
+    return(
+        <div>
+            <div id="xd" className="card contenido">
                     <div className="curador_picks">
                         <div className="fila_1">
                             <div className="card">
@@ -124,6 +106,96 @@ class Stand extends Component{
                             </div>
                         </div>
                     </div>
+                    </div>
+        </div>
+    );
+}
+
+function Search() {
+    return(
+        <div className="card">
+            <div className="form-group">
+                <label htmlFor="exampleFormControlSelect1">Nacionalidad</label>
+                <select className="form-control" id="exampleFormControlSelect1">
+                    <option>Colombia</option>
+                    <option>Mexico</option>
+                    <option>Argentina</option>
+                    <option>Chile</option>
+                    <option>Venezuela</option>
+                </select>
+            </div>
+            <div className="form-group">
+                <label htmlFor="exampleFormControlSelect1">Duracion</label>
+                <select className="form-control" id="exampleFormControlSelect1">
+                    <option>0-5 minutos</option>
+                    <option>6-10 minutos</option>
+                    <option>11-15 minutos</option>
+                    <option>15-30 minutos</option>
+                    <option>+30 minutos</option>
+                </select>
+            </div>
+            <div className="form-group">
+                <label htmlFor="exampleFormControlSelect1">Canal</label>
+                <select className="form-control" id="exampleFormControlSelect1">
+                    <option>Con Animo de Ofender</option>
+                    <option>Comedy Central</option>
+                    <option>Franco Escamilla</option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </div>
+            <div className="form-group">
+                <label htmlFor="exampleFormControlSelect1">Comediante</label>
+                <select className="form-control" id="exampleFormControlSelect1">
+                    <option>Fran Hevia</option>
+                    <option>Ojitos de Huevo</option>
+                    <option>Franco Escamilla</option>
+                    <option>Camilo Sanchez</option>
+                    <option>Deibis Cortez</option>
+                </select>
+            </div>
+            <div><button className="btn btn-success" type="submit">Buscar</button></div>
+        </div>
+    );
+}
+videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
+videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
+videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
+videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
+videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
+videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
+videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
+videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
+videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
+videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
+videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
+
+class Stand extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            show: true,
+        }
+    }
+
+    handleClick(){
+        this.setState({
+            show: !this.state.show,
+        })
+    }
+
+    render(){
+        const contenido = this.state.show ? <Recomendaciones /> : <Search />;
+        const status = this.state.show ? "Buscar" : "Volver atras";
+        return(
+            <div>
+                <div id="body">
+                    <div className="card">
+                        <div className="card-header text-center">Te lo recomendamos</div>
+                        <div><button type="button" className="btn btn-outline-success boton_buscarMas" onClick={()=>this.handleClick()}>{status}</button></div>
+                    </div>
+                    <div >
+                        {contenido}
                     </div>
                 </div>
                 <footer>
