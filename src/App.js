@@ -259,7 +259,7 @@ function Search() {
                     <option>Deibis Cortez</option>
                 </select>
             </div>
-            <div><button className="btn btn-success" type="submit">Buscar</button></div>
+            <div><button className="btn btn-success" onclick={() => buscar()} type="submit">Buscar</button></div>
         </div>
     );
 }
