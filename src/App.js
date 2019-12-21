@@ -115,6 +115,7 @@ function Home() {
 }
 
 const videos = [];
+const videos_para_mostrar = [];
 
 class Video
 {
@@ -294,10 +295,10 @@ class Search extends Component {
           {
             if (videos[i].comediante == comediante) 
             {
-              console.log(element);
+              videos_para_mostrar.push(element);
             } 
             else if(comediante == "No importa"){
-              console.log(element);
+              videos_para_mostrar.push(element);
             }
             else
             {
@@ -307,10 +308,10 @@ class Search extends Component {
           else if(canal == "No importa"){
             if (videos[i].comediante == comediante) 
           {
-            console.log(element);
+            videos_para_mostrar.push(element);
           } 
           else if(comediante == "No importa"){
-            console.log(element);
+            videos_para_mostrar.push(element);
           }
           else
           {
@@ -328,10 +329,10 @@ class Search extends Component {
           {
             if (videos[i].comediante == comediante) 
           {
-            console.log(element);
+            videos_para_mostrar.push(element);
           } 
           else if(comediante == "No importa"){
-            console.log(element);
+            videos_para_mostrar.push(element);
           }
           else
           {
@@ -340,10 +341,10 @@ class Search extends Component {
           } else if(canal == "No importa"){
             if (videos[i].comediante == comediante) 
           {
-            console.log(element);
+            videos_para_mostrar.push(element);
           } 
           else if(comediante == "No importa"){
-            console.log(element);
+            videos_para_mostrar.push(element);
           }
           else
           {
@@ -364,10 +365,10 @@ class Search extends Component {
           {
             if (videos[i].comediante == comediante) 
           {
-            console.log(element);
+            videos_para_mostrar.push(element);
           } 
           else if(comediante == "No importa"){
-            console.log(element);
+            videos_para_mostrar.push(element);
           }
           else
           {
@@ -377,10 +378,10 @@ class Search extends Component {
           else if(canal == "No importa"){
             if (videos[i].comediante == comediante) 
           {
-            console.log(element);
+            videos_para_mostrar.push(element);
           } 
           else if(comediante == "No importa"){
-            console.log(element);
+            videos_para_mostrar.push(element);
           }
           else
           {
@@ -397,10 +398,10 @@ class Search extends Component {
           {
             if (videos[i].comediante == comediante) 
           {
-            console.log(element);
+            videos_para_mostrar.push(element);
           } 
           else if(comediante == "No importa"){
-            console.log(element);
+            videos_para_mostrar.push(element);
           }
           else
           {
@@ -409,10 +410,10 @@ class Search extends Component {
           } else if(canal == "No importa"){
             if (videos[i].comediante == comediante) 
           {
-            console.log(element);
+            videos_para_mostrar.push(element);
           } 
           else if(comediante == "No importa"){
-            console.log(element);
+            videos_para_mostrar.push(element);
           }
           else
           {
@@ -434,7 +435,7 @@ class Search extends Component {
   }
 
   render() { 
-    const search_contenido = this.state.showBuscar ? <MenuSearch /> : <div>hola</div>;
+    const search_contenido = this.state.showBuscar ? <MenuSearch /> : <Mostrar_videos />;
     return ( 
       <div>
         {search_contenido}
@@ -442,6 +443,32 @@ class Search extends Component {
       </div>
      );
   }
+}
+
+function Mostrar_videos() {
+  const contenido = videos_para_mostrar;
+  for (let i = 0; i < contenido.length; i++) {
+    var mostrar = contenido.map(function () {
+      return(
+        <div className="card">
+          <div className="recomendacion_body card-body">
+            <iframe id="ytplayer" src={contenido[i]} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
+          </div>
+        </div>
+      );
+    })
+  }
+  return(
+      <div>
+        <div>
+          <div className="curador_picks">
+            <div className="fila_1">
+              {mostrar}
+            </div>
+          </div>
+        </div>
+    </div>
+  );
 }
 
 videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla") );
