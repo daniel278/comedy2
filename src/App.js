@@ -217,6 +217,57 @@ function Recomendaciones() {
     );
 }
 
+function MenuSearch() {
+  return(
+    <div className="card">
+            <div className="form-group">
+                <label htmlFor="exampleFormControlSelect1">Nacionalidad</label>
+                <select className="form-control" id="select_nacionalidad">
+                    <option>No importa</option>
+                    <option>Colombia</option>
+                    <option>Mexico</option>
+                    <option>Argentina</option>
+                    <option>Chile</option>
+                    <option>Venezuela</option>
+                </select>
+            </div>
+            <div className="form-group">
+                <label htmlFor="exampleFormControlSelect1">Duracion</label>
+                <select className="form-control" id="select_duracion">
+                    <option>No importa</option>
+                    <option>0-5 minutos</option>
+                    <option>6-10 minutos</option>
+                    <option>11-15 minutos</option>
+                    <option>15-30 minutos</option>
+                    <option>+30 minutos</option>
+                </select>
+            </div>
+            <div className="form-group">
+                <label htmlFor="exampleFormControlSelect1">Canal</label>
+                <select className="form-control" id="select_canal">
+                    <option>No importa</option>
+                    <option>Con Animo de Ofender</option>
+                    <option>Comedy Central</option>
+                    <option>Franco Escamilla</option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </div>
+            <div className="form-group">
+                <label htmlFor="exampleFormControlSelect1">Comediante</label>
+                <select className="form-control" id="select_comediante">
+                    <option>No importa</option>
+                    <option>Fran Hevia</option>
+                    <option>Ojitos de Huevo</option>
+                    <option>Franco Escamilla</option>
+                    <option>Camilo Sanchez</option>
+                    <option>Deibis Cortez</option>
+                </select>
+            </div>
+        </div>
+  );
+}
+
 class Search extends Component {
   constructor(props) {
     super(props);
@@ -226,6 +277,10 @@ class Search extends Component {
   }
 
   handleBuscar() {
+    this.setState({
+      showBuscar: !this.state.showBuscar,
+    })
+
     const nacionalidad = document.getElementById('select_nacionalidad').value;  
     const duracion = document.getElementById('select_duracion').value;  
     const canal = document.getElementById('select_canal').value;
@@ -379,54 +434,12 @@ class Search extends Component {
   }
 
   render() { 
+    const search_contenido = this.state.showBuscar ? <MenuSearch /> : <div>hola</div>;
     return ( 
-      <div className="card">
-            <div className="form-group">
-                <label htmlFor="exampleFormControlSelect1">Nacionalidad</label>
-                <select className="form-control" id="select_nacionalidad">
-                    <option>No importa</option>
-                    <option>Colombia</option>
-                    <option>Mexico</option>
-                    <option>Argentina</option>
-                    <option>Chile</option>
-                    <option>Venezuela</option>
-                </select>
-            </div>
-            <div className="form-group">
-                <label htmlFor="exampleFormControlSelect1">Duracion</label>
-                <select className="form-control" id="select_duracion">
-                    <option>No importa</option>
-                    <option>0-5 minutos</option>
-                    <option>6-10 minutos</option>
-                    <option>11-15 minutos</option>
-                    <option>15-30 minutos</option>
-                    <option>+30 minutos</option>
-                </select>
-            </div>
-            <div className="form-group">
-                <label htmlFor="exampleFormControlSelect1">Canal</label>
-                <select className="form-control" id="select_canal">
-                    <option>No importa</option>
-                    <option>Con Animo de Ofender</option>
-                    <option>Comedy Central</option>
-                    <option>Franco Escamilla</option>
-                    <option></option>
-                    <option></option>
-                </select>
-            </div>
-            <div className="form-group">
-                <label htmlFor="exampleFormControlSelect1">Comediante</label>
-                <select className="form-control" id="select_comediante">
-                    <option>No importa</option>
-                    <option>Fran Hevia</option>
-                    <option>Ojitos de Huevo</option>
-                    <option>Franco Escamilla</option>
-                    <option>Camilo Sanchez</option>
-                    <option>Deibis Cortez</option>
-                </select>
-            </div>
-            <div><button className="btn btn-success" onClick={() => this.handleBuscar()} type="submit">Buscar</button></div>
-        </div>
+      <div>
+        {search_contenido}
+        <div><button className="btn btn-outline-danger boton_buscarMas" onClick={() => this.handleBuscar()} type="submit">Buscar</button></div>
+      </div>
      );
   }
 }
@@ -465,7 +478,7 @@ class Stand extends Component{
                 <div id="body">
                     <div className="card">
                         <div className="card-header text-center">Te lo recomendamos</div>
-                        <div><button type="button" className="btn btn-outline-success boton_buscarMas" onClick={()=>this.handleClick()}>{status}</button></div>
+                        <div><button type="button" className="btn btn-outline-danger boton_buscarMas" onClick={()=>this.handleClick()}>{status}</button></div>
                     </div>
                     <div >
                         {contenido}
