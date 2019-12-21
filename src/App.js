@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './index.css';
 
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import './App.css';
@@ -216,12 +217,174 @@ function Recomendaciones() {
     );
 }
 
-function Search() {
-    return(
-        <div className="card">
+class Search extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      showBuscar: true,
+     }
+  }
+
+  handleBuscar() {
+    const nacionalidad = document.getElementById('select_nacionalidad').value;  
+    const duracion = document.getElementById('select_duracion').value;  
+    const canal = document.getElementById('select_canal').value;
+    const comediante = document.getElementById('select_comediante').value;
+  
+    for (let i = 0; i < videos.length; i++) {
+      const element = videos[i].src;
+      if (videos[i].nacionalidad == nacionalidad) {
+        if (videos[i].duracion == duracion) {
+          if (videos[i].canal == canal) 
+          {
+            if (videos[i].comediante == comediante) 
+            {
+              console.log(element);
+            } 
+            else if(comediante == "No importa"){
+              console.log(element);
+            }
+            else
+            {
+              console.log("No se encontraron videos");
+            }
+          } 
+          else if(canal == "No importa"){
+            if (videos[i].comediante == comediante) 
+          {
+            console.log(element);
+          } 
+          else if(comediante == "No importa"){
+            console.log(element);
+          }
+          else
+          {
+            console.log("No se encontraron videos");
+          }
+          }
+          else
+          {
+            console.log("No se encontraron videos");
+          }
+        } 
+        else if(duracion == "No importa")
+        {
+          if (videos[i].canal == canal) 
+          {
+            if (videos[i].comediante == comediante) 
+          {
+            console.log(element);
+          } 
+          else if(comediante == "No importa"){
+            console.log(element);
+          }
+          else
+          {
+            console.log("No se encontraron videos");
+          }
+          } else if(canal == "No importa"){
+            if (videos[i].comediante == comediante) 
+          {
+            console.log(element);
+          } 
+          else if(comediante == "No importa"){
+            console.log(element);
+          }
+          else
+          {
+            console.log("No se encontraron videos");
+          }
+          }
+          else{
+            console.log("No se encontraron videos");
+          }
+        }
+        else{
+          console.log("No se encontraron videos");
+        }
+      } 
+      else if(nacionalidad == "No importa"){
+        if (videos[i].duracion == duracion) {
+          if (videos[i].canal == canal) 
+          {
+            if (videos[i].comediante == comediante) 
+          {
+            console.log(element);
+          } 
+          else if(comediante == "No importa"){
+            console.log(element);
+          }
+          else
+          {
+            console.log("No se encontraron videos");
+          }
+          } 
+          else if(canal == "No importa"){
+            if (videos[i].comediante == comediante) 
+          {
+            console.log(element);
+          } 
+          else if(comediante == "No importa"){
+            console.log(element);
+          }
+          else
+          {
+            console.log("No se encontraron videos");
+          }
+          }
+          else{
+            console.log("No se encontraron videos");
+          }
+        } 
+        else if(duracion == "No importa")
+        {
+          if (videos[i].canal == canal) 
+          {
+            if (videos[i].comediante == comediante) 
+          {
+            console.log(element);
+          } 
+          else if(comediante == "No importa"){
+            console.log(element);
+          }
+          else
+          {
+            console.log("No se encontraron videos");
+          }
+          } else if(canal == "No importa"){
+            if (videos[i].comediante == comediante) 
+          {
+            console.log(element);
+          } 
+          else if(comediante == "No importa"){
+            console.log(element);
+          }
+          else
+          {
+            console.log("No se encontraron videos");
+          }
+          }
+          else{
+            console.log("No se encontraron videos");
+          }
+        }
+        else{
+          console.log("No se encontraron videos");
+        }
+      }
+      else{
+        console.log("No se encontraron videos");
+      }
+    }
+  }
+
+  render() { 
+    return ( 
+      <div className="card">
             <div className="form-group">
                 <label htmlFor="exampleFormControlSelect1">Nacionalidad</label>
-                <select className="form-control" id="exampleFormControlSelect1">
+                <select className="form-control" id="select_nacionalidad">
+                    <option>No importa</option>
                     <option>Colombia</option>
                     <option>Mexico</option>
                     <option>Argentina</option>
@@ -231,7 +394,8 @@ function Search() {
             </div>
             <div className="form-group">
                 <label htmlFor="exampleFormControlSelect1">Duracion</label>
-                <select className="form-control" id="exampleFormControlSelect1">
+                <select className="form-control" id="select_duracion">
+                    <option>No importa</option>
                     <option>0-5 minutos</option>
                     <option>6-10 minutos</option>
                     <option>11-15 minutos</option>
@@ -241,7 +405,8 @@ function Search() {
             </div>
             <div className="form-group">
                 <label htmlFor="exampleFormControlSelect1">Canal</label>
-                <select className="form-control" id="exampleFormControlSelect1">
+                <select className="form-control" id="select_canal">
+                    <option>No importa</option>
                     <option>Con Animo de Ofender</option>
                     <option>Comedy Central</option>
                     <option>Franco Escamilla</option>
@@ -251,7 +416,8 @@ function Search() {
             </div>
             <div className="form-group">
                 <label htmlFor="exampleFormControlSelect1">Comediante</label>
-                <select className="form-control" id="exampleFormControlSelect1">
+                <select className="form-control" id="select_comediante">
+                    <option>No importa</option>
                     <option>Fran Hevia</option>
                     <option>Ojitos de Huevo</option>
                     <option>Franco Escamilla</option>
@@ -259,21 +425,23 @@ function Search() {
                     <option>Deibis Cortez</option>
                 </select>
             </div>
-            <div><button className="btn btn-success" onclick={() => buscar()} type="submit">Buscar</button></div>
+            <div><button className="btn btn-success" onClick={() => this.handleBuscar()} type="submit">Buscar</button></div>
         </div>
-    );
+     );
+  }
 }
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", 11, "Comedy Central", "Franco Escamilla") );
+
+videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla") );
+videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla") );
+videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla") );
+videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla") );
+videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla") );
+videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla") );
+videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla") );
+videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla") );
+videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla") );
+videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla") );
+videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla") );
 
 class Stand extends Component{
     constructor(props){
