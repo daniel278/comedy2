@@ -20,7 +20,17 @@
 }
 
 @media (min-width: 992px) { 
-  .curador_picks iframe{
+  .resultado_busqueda_body{
+    justify-content: center;
+  }
+
+  .resultado_busqueda_body iframe{
+    position: initial !important;
+    width: 640px !important;
+    height: 340px !important;
+  }
+
+  .fila_1 iframe{
     position: initial !important;
     width: 640px !important;
     height: 240px !important;
@@ -177,3 +187,5 @@ iframe{
 .boton_buscarMas{
   width: 100%;
 }
+
+/*Resultados de la busqueda en stand*/
