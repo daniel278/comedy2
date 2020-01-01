@@ -202,12 +202,12 @@ function Recomendaciones() {
                                 <iframe id="ytplayer" src="https://www.youtube.com/embed/H8wTVY_Cbww" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
                                 </div>
                                 <div className="card-footer">
-                                <a href="https://www.youtube.com/watch?v=H8wTVY_Cbww&t=294s" className="btn btn-danger">Ver en youtube</a>
+                                <a href="https://www.youtube.com/watch?v=H8wTVY_Cbww&t" className="btn btn-danger">Ver en youtube</a>
                                 </div>
                             </div>
                             <div className="card">
                                 <div className="recomendacion_body card-body">
-                                <iframe id="ytplayer" src="https://www.youtube.com/embed/2kpIwYp08x8" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
+                                <iframe id="ytplayer" src="https://www.youtube.com/embed/1sLsxZSRMsI" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
                                 </div>
                                 <div className="card-footer">
                                 <a href="https://www.youtube.com/watch?v=1sLsxZSRMsI" className="btn btn-danger">Ver en youtube</a>
@@ -215,10 +215,10 @@ function Recomendaciones() {
                             </div>
                             <div className="card">
                                 <div className="recomendacion_body card-body">
-                                <iframe id="ytplayer" src="https://www.youtube.com/embed/2kpIwYp08x8" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
+                                <iframe id="ytplayer" src="https://www.youtube.com/embed/xQpAUDkOhlA" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
                                 </div>
                                 <div className="card-footer">
-                                <a href="https://www.youtube.com/watch?v=1sLsxZSRMsI" className="btn btn-danger">Ver en youtube</a>
+                                <a href="https://www.youtube.com/watch?v=xQpAUDkOhlA" className="btn btn-danger">Ver en youtube</a>
                                 </div>
                             </div>
                         </div>
@@ -475,20 +475,20 @@ class Search extends Component {
 function Mostrar_videos() {
   const contenido = videos_para_mostrar;
   const ytcontenido = ytsrc_videos_para_mostrar;
-  for (let i = 0; i < contenido.length; i++) {
-    var mostrar = contenido.map(function () {
+  const  mostrar = contenido.map(function (todo, index) {   
+    console.log(todo);
+       
       return(
-        <div className="card resultado_busqueda">
+        <div className="card resultado_busqueda" key={todo}>
           <div className="card-body resultado_busqueda_body recomendacion_body">
-            <iframe id="ytplayer" src={contenido[i]} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
+            <iframe id="ytplayer" src={contenido[index]} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
           </div>
           <div className="card-footer">
-            <a href={ytcontenido[i]} className="btn btn-danger">Ver en youtube</a>
+            <a href={ytcontenido[index]} className="btn btn-danger">Ver en youtube</a>
           </div>
         </div>
       );
     })
-  }
   return(
       <div>
         <div>
@@ -502,17 +502,29 @@ function Mostrar_videos() {
   );
 }
 
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla", "https://www.youtube.com/watch?v=bXcqSRzo6YI&t=567s") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla", "https://www.youtube.com/watch?v=bXcqSRzo6YI&t=567s") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla", "https://www.youtube.com/watch?v=bXcqSRzo6YI&t=567s") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla", "https://www.youtube.com/watch?v=bXcqSRzo6YI&t=567s") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla", "https://www.youtube.com/watch?v=bXcqSRzo6YI&t=567s") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla", "https://www.youtube.com/watch?v=bXcqSRzo6YI&t=567s") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla", "https://www.youtube.com/watch?v=bXcqSRzo6YI&t=567s") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla", "https://www.youtube.com/watch?v=bXcqSRzo6YI&t=567s") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla", "https://www.youtube.com/watch?v=bXcqSRzo6YI&t=567s") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla", "https://www.youtube.com/watch?v=bXcqSRzo6YI&t=567s") );
-videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla", "https://www.youtube.com/watch?v=bXcqSRzo6YI&t=567s") );
+
+//Con Animo de ofender - 7 Videos
+//Comedy Central - 10 Videos
+//Franco Escamilla - 5 Videos
+//Otros -25 Videos // -5 Venezuela -5 Argentina -5 Chile -5 Ecuador -5 Mexicano
+
+videos.push( new Video("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla", "https://www.youtube.com/watch?v=bXcqSRzo6YI&t") );
+videos.push( new Video("https://www.youtube.com/embed/zasRGidzwOg", "Colombia", "0-5 minutos", "Comedy Central", "Otros", "https://www.youtube.com/watch?v=zasRGidzwOg") );
+videos.push( new Video("https://www.youtube.com/embed/6g8veZSCevM", "Colombia", "0-5 minutos", "Con Animo de Ofender", "Deibis Cortes", "https://www.youtube.com/watch?v=6g8veZSCevM") );
+videos.push( new Video("https://www.youtube.com/embed/eHXHknVDTK4", "Venezuela", "+30 minutos", "Otros", "Otros", "https://www.youtube.com/watch?v=eHXHknVDTK4&t") );
+videos.push( new Video("https://www.youtube.com/embed/xpGUU0BZhRw", "Mexico", "11-15 minutos", "Comedy Central", "Carlos Ballarta", "https://www.youtube.com/watch?v=xpGUU0BZhRw") );
+videos.push( new Video("https://www.youtube.com/embed/xQpAUDkOhlA", "Argentina", "6-10 minutos", "Otros", "Otros", "https://www.youtube.com/watch?v=xQpAUDkOhlA") );
+videos.push( new Video("https://www.youtube.com/embed/zIl9ZI4lFuY", "Venezuela", "+30 minutos", "Otros", "Otros", "https://www.youtube.com/watch?v=zIl9ZI4lFuY&t") );
+videos.push( new Video("https://www.youtube.com/embed/omGF6Ps9Nog", "Mexico", "+30 minutos", "Otros", "Ricardo O'Farrill", "https://www.youtube.com/watch?v=omGF6Ps9Nog") );
+videos.push( new Video("https://www.youtube.com/embed/SbJEaHUimrY", "Mexico", "+30 minutos", "Franco Escamilla", "Franco Escamilla", "https://www.youtube.com/watch?v=SbJEaHUimrY&t") );
+videos.push( new Video("https://www.youtube.com/embed/E4HB80JGO9E", "Colombia", "0-5 minutos", "Con Animo de Ofender", "Otros", "https://www.youtube.com/watch?v=E4HB80JGO9E&t") );
+videos.push( new Video("https://www.youtube.com/embed/_AAqUamNQA0", "Colombia", "0-5 minutos", "Con Animo de Ofender", "Otros", "https://www.youtube.com/watch?v=_AAqUamNQA0") );
+videos.push( new Video("https://www.youtube.com/embed/0H4xKqMJRFo", "Colombia", "11-15 minutos", "Comedy Central", "Otros", "https://www.youtube.com/watch?v=0H4xKqMJRFo") );
+videos.push( new Video("https://www.youtube.com/embed/Z8UA30qFVak", "Mexico", "11-15 minutos", "Franco Escamilla", "Franco Escamilla", "https://www.youtube.com/watch?v=Z8UA30qFVak") );
+videos.push( new Video("https://www.youtube.com/embed/ZkVj_boxQ8U", "Mexico", "+30 minutos", "Otros", "Otros", "https://www.youtube.com/watch?v=ZkVj_boxQ8U"));
+videos.push( new Video("https://www.youtube.com/embed/z0cq0VQReUA", "Colombia", "6-10 minutos", "Con Animo de Ofender", "Otros", "https://www.youtube.com/watch?v=z0cq0VQReUA&t=") );
+videos.push( new Video("https://www.youtube.com/embed/nDJjLLwgFDI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla", "https://www.youtube.com/watch?v=nDJjLLwgFDI") );
+videos.push( new Video("https://www.youtube.com/embed/3WyKwsRutSw", "Colombia", "6-10 minutos", "Con Animo de Ofender", "Otros", "https://www.youtube.com/watch?v=3WyKwsRutSw&t") );
 
 class Stand extends Component{
     constructor(props){
@@ -565,13 +577,13 @@ const ytsrc_videos_para_mostrar_etc = [];
 
 class Video_etc
 {
-    constructor(src, nacionalidad, duracion, canal, comediante, ytsrc)
+    constructor(src, nacionalidad, duracion, canal, categoria, ytsrc)
     {
         this.src = src;
         this.nacionalidad = nacionalidad;
         this.duracion = duracion;
         this.canal = canal;
-        this.comediante = comediante;
+        this.categoria = categoria;
         this.ytsrc = ytsrc;
     }
 }
@@ -584,78 +596,78 @@ function Recomendaciones_etc() {
                         <div className="fila_1">
                             <div className="card">
                                 <div className="recomendacion_body card-body">
-                                <iframe id="ytplayer" src="https://www.youtube.com/embed/2kpIwYp08x8" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
+                                <iframe id="ytplayer" src="https://www.youtube.com/embed/v8KWyLEMFn8" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
                                 </div>
                                 <div className="card-footer">
-                                <a href="https://www.youtube.com/watch?v=1sLsxZSRMsI" className="btn btn-danger">Ver en youtube</a>
+                                <a href="https://www.youtube.com/watch?v=v8KWyLEMFn8&t" className="btn btn-danger">Ver en youtube</a>
                                 </div>
                             </div>
                             <div className="card">
                                 <div className="recomendacion_body card-body">
-                                <iframe id="ytplayer" src="https://www.youtube.com/embed/z3OGpqziuyo" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
+                                <iframe id="ytplayer" src="https://www.youtube.com/embed/TAHXmgXt-9E" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
                                 </div>
                                 <div className="card-footer">
-                                <a href="https://www.youtube.com/watch?v=z3OGpqziuyo" className="btn btn-danger">Ver en youtube</a>
+                                <a href="https://www.youtube.com/watch?v=TAHXmgXt-9E" className="btn btn-danger">Ver en youtube</a>
                                 </div>
                             </div>
                             <div className="card">
                                 <div className="recomendacion_body card-body">
-                                <iframe id="ytplayer" src="https://www.youtube.com/embed/2Keef-1FaXk" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
+                                <iframe id="ytplayer" src="https://www.youtube.com/embed/ZZmfJxtElOc" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
                                 </div>
                                 <div className="card-footer">
-                                <a href="https://www.youtube.com/watch?v=2Keef-1FaXk&t=56s" className="btn btn-danger">Ver en youtube</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="fila_1">
-                            <div className="card">
-                                <div className="recomendacion_body card-body">
-                                <iframe id="ytplayer" src="https://www.youtube.com/embed/MzuGjn3nmmQ" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
-                                </div>
-                                <div className="card-footer">
-                                <a href="https://www.youtube.com/watch?v=MzuGjn3nmmQ&t=2s" className="btn btn-danger">Ver en youtube</a>
-                                </div>
-                            </div>
-                            <div className="card">
-                                <div className="recomendacion_body card-body">
-                                <iframe id="ytplayer" src="https://www.youtube.com/embed/kdlXRZY3Bi8 " frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
-                                </div>
-                                <div className="card-footer">
-                                <a href="https://www.youtube.com/watch?v=kdlXRZY3Bi8&t=253s" className="btn btn-danger">Ver en youtube</a>
-                                </div>
-                            </div>
-                            <div className="card">
-                                <div className="recomendacion_body card-body">
-                                <iframe id="ytplayer" src="https://www.youtube.com/embed/KC9pwGo5r94" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
-                                </div>
-                                <div className="card-footer">
-                                <a href="https://www.youtube.com/watch?v=KC9pwGo5r94" className="btn btn-danger">Ver en youtube</a>
+                                <a href="https://www.youtube.com/watch?v=ZZmfJxtElOc" className="btn btn-danger">Ver en youtube</a>
                                 </div>
                             </div>
                         </div>
                         <div className="fila_1">
                             <div className="card">
                                 <div className="recomendacion_body card-body">
-                                <iframe id="ytplayer" src="https://www.youtube.com/embed/H8wTVY_Cbww" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
+                                <iframe id="ytplayer" src="https://www.youtube.com/embed/JDaU1E_Mk2M" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
                                 </div>
                                 <div className="card-footer">
-                                <a href="https://www.youtube.com/watch?v=H8wTVY_Cbww&t=294s" className="btn btn-danger">Ver en youtube</a>
+                                <a href="https://www.youtube.com/watch?v=JDaU1E_Mk2M" className="btn btn-danger">Ver en youtube</a>
                                 </div>
                             </div>
                             <div className="card">
                                 <div className="recomendacion_body card-body">
-                                <iframe id="ytplayer" src="https://www.youtube.com/embed/2kpIwYp08x8" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
+                                <iframe id="ytplayer" src="https://www.youtube.com/embed/Jonq3q7yd6s" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
                                 </div>
                                 <div className="card-footer">
-                                <a href="https://www.youtube.com/watch?v=1sLsxZSRMsI" className="btn btn-danger">Ver en youtube</a>
+                                <a href="https://www.youtube.com/watch?v=Jonq3q7yd6s" className="btn btn-danger">Ver en youtube</a>
                                 </div>
                             </div>
                             <div className="card">
                                 <div className="recomendacion_body card-body">
-                                <iframe id="ytplayer" src="https://www.youtube.com/embed/2kpIwYp08x8" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
+                                <iframe id="ytplayer" src="https://www.youtube.com/embed/WWukDTlTHlY" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
                                 </div>
                                 <div className="card-footer">
-                                <a href="https://www.youtube.com/watch?v=1sLsxZSRMsI" className="btn btn-danger">Ver en youtube</a>
+                                <a href="https://www.youtube.com/watch?v=WWukDTlTHlY" className="btn btn-danger">Ver en youtube</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="fila_1">
+                            <div className="card">
+                                <div className="recomendacion_body card-body">
+                                <iframe id="ytplayer" src="https://www.youtube.com/embed/W6iBwy4yrVM" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
+                                </div>
+                                <div className="card-footer">
+                                <a href="https://www.youtube.com/watch?v=W6iBwy4yrVM" className="btn btn-danger">Ver en youtube</a>
+                                </div>
+                            </div>
+                            <div className="card">
+                                <div className="recomendacion_body card-body">
+                                <iframe id="ytplayer" src="https://www.youtube.com/embed/OIPPJK7c6h8" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
+                                </div>
+                                <div className="card-footer">
+                                <a href="https://www.youtube.com/watch?v=OIPPJK7c6h8" className="btn btn-danger">Ver en youtube</a>
+                                </div>
+                            </div>
+                            <div className="card">
+                                <div className="recomendacion_body card-body">
+                                <iframe id="ytplayer" src="https://www.youtube.com/embed/ZGgDpx4Wg-U" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
+                                </div>
+                                <div className="card-footer">
+                                <a href="https://www.youtube.com/watch?v=ZGgDpx4Wg-U" className="btn btn-danger">Ver en youtube</a>
                                 </div>
                             </div>
                         </div>
@@ -669,19 +681,30 @@ function MenuSearch_etc() {
   return(
     <div className="card">
             <div className="form-group">
+                <label htmlFor="exampleFormControlSelect1">Categoria</label>
+                <select className="form-control" id="select_categoria_etc">
+                    <option>No importa</option>
+                    <option>Entrevista</option>
+                    <option>Podcast</option>
+                    <option>No se como clasificarlo</option>
+                </select>
+            </div>
+            <div className="form-group">
                 <label htmlFor="exampleFormControlSelect1">Nacionalidad</label>
-                <select className="form-control" id="select_nacionalidad">
+                <select className="form-control" id="select_nacionalidad_etc">
                     <option>No importa</option>
                     <option>Colombia</option>
                     <option>Mexico</option>
+                    <option>Venezuela</option>
                     <option>Argentina</option>
                     <option>Chile</option>
-                    <option>Venezuela</option>
+                    <option>Estados Unidos</option>
+                    <option>Otros</option>
                 </select>
             </div>
             <div className="form-group">
                 <label htmlFor="exampleFormControlSelect1">Duracion</label>
-                <select className="form-control" id="select_duracion">
+                <select className="form-control" id="select_duracion_etc">
                     <option>No importa</option>
                     <option>0-5 minutos</option>
                     <option>6-10 minutos</option>
@@ -692,24 +715,16 @@ function MenuSearch_etc() {
             </div>
             <div className="form-group">
                 <label htmlFor="exampleFormControlSelect1">Canal</label>
-                <select className="form-control" id="select_canal">
+                <select className="form-control" id="select_canal_etc">
                     <option>No importa</option>
                     <option>Con Animo de Ofender</option>
                     <option>Comedy Central</option>
-                    <option>Franco Escamilla</option>
-                    <option></option>
-                    <option></option>
-                </select>
-            </div>
-            <div className="form-group">
-                <label htmlFor="exampleFormControlSelect1">Comediante</label>
-                <select className="form-control" id="select_comediante">
-                    <option>No importa</option>
-                    <option>Fran Hevia</option>
-                    <option>Ojitos de Huevo</option>
-                    <option>Franco Escamilla</option>
-                    <option>Camilo Sanchez</option>
-                    <option>Deibis Cortez</option>
+                    <option>Escuela de nada</option>
+                    <option>Juanpis Gonzales</option>
+                    <option>Vete a la versh</option>
+                    <option>enchufetv</option>
+                    <option>NEGAS</option>
+                    <option>Otros</option>
                 </select>
             </div>
         </div>
@@ -729,24 +744,24 @@ class Search_etc extends Component {
       showBuscar: !this.state.showBuscar,
     })
 
-    const nacionalidad = document.getElementById('select_nacionalidad').value;  
-    const duracion = document.getElementById('select_duracion').value;  
-    const canal = document.getElementById('select_canal').value;
-    const comediante = document.getElementById('select_comediante').value;
-  
+    const nacionalidad = document.getElementById('select_nacionalidad_etc').value;  
+    const duracion = document.getElementById('select_duracion_etc').value;  
+    const canal = document.getElementById('select_canal_etc').value;
+    const categoria = document.getElementById('select_categoria_etc').value;
+
     for (let i = 0; i < videos_etc.length; i++) {
       const element = videos_etc[i].src;
       const ytelement = videos_etc[i].ytsrc;
-      if (videos_etc[i].nacionalidad == nacionalidad) {
-        if (videos_etc[i].duracion == duracion) {
-          if (videos_etc[i].canal == canal) 
+      if (videos_etc[i].nacionalidad_etc == nacionalidad) {
+        if (videos_etc[i].duracion_etc == duracion) {
+          if (videos_etc[i].canal_etc == canal) 
           {
-            if (videos_etc[i].comediante == comediante) 
+            if (videos_etc[i].categoria == categoria) 
             {
               videos_para_mostrar_etc.push(element);
               ytsrc_videos_para_mostrar_etc.push(ytelement);
             } 
-            else if(comediante == "No importa"){
+            else if(categoria == "No importa"){
               videos_para_mostrar_etc.push(element);
               ytsrc_videos_para_mostrar_etc.push(ytelement);
             }
@@ -756,12 +771,12 @@ class Search_etc extends Component {
             }
           } 
           else if(canal == "No importa"){
-            if (videos_etc[i].comediante == comediante) 
+            if (videos_etc[i].categoria == categoria) 
           {
             videos_para_mostrar_etc.push(element);
             ytsrc_videos_para_mostrar_etc.push(ytelement);
           } 
-          else if(comediante == "No importa"){
+          else if(categoria == "No importa"){
             videos_para_mostrar_etc.push(element);
             ytsrc_videos_para_mostrar_etc.push(ytelement);
           }
@@ -779,12 +794,12 @@ class Search_etc extends Component {
         {
           if (videos_etc[i].canal == canal) 
           {
-            if (videos_etc[i].comediante == comediante) 
+            if (videos_etc[i].categoria == categoria) 
           {
             videos_para_mostrar_etc.push(element);
             ytsrc_videos_para_mostrar_etc.push(ytelement);
           } 
-          else if(comediante == "No importa"){
+          else if(categoria == "No importa"){
             videos_para_mostrar_etc.push(element);
             ytsrc_videos_para_mostrar_etc.push(ytelement);
           }
@@ -793,12 +808,12 @@ class Search_etc extends Component {
             console.log("No se encontraron videos");
           }
           } else if(canal == "No importa"){
-            if (videos_etc[i].comediante == comediante) 
+            if (videos_etc[i].categoria == categoria) 
           {
             videos_para_mostrar_etc.push(element);
             ytsrc_videos_para_mostrar_etc.push(ytelement);
           } 
-          else if(comediante == "No importa"){
+          else if(categoria == "No importa"){
             videos_para_mostrar_etc.push(element);
             ytsrc_videos_para_mostrar_etc.push(ytelement);
           }
@@ -819,12 +834,12 @@ class Search_etc extends Component {
         if (videos_etc[i].duracion == duracion) {
           if (videos_etc[i].canal == canal) 
           {
-            if (videos_etc[i].comediante == comediante) 
+            if (videos_etc[i].categoria == categoria) 
           {
             videos_para_mostrar_etc.push(element);
             ytsrc_videos_para_mostrar_etc.push(ytelement);
           } 
-          else if(comediante == "No importa"){
+          else if(categoria == "No importa"){
             videos_para_mostrar_etc.push(element);
             ytsrc_videos_para_mostrar_etc.push(ytelement);
           }
@@ -834,12 +849,12 @@ class Search_etc extends Component {
           }
           } 
           else if(canal == "No importa"){
-            if (videos_etc[i].comediante == comediante) 
+            if (videos_etc[i].categoria == categoria) 
           {
             videos_para_mostrar_etc.push(element);
             ytsrc_videos_para_mostrar_etc.push(ytelement);
           } 
-          else if(comediante == "No importa"){
+          else if(categoria == "No importa"){
             videos_para_mostrar_etc.push(element);
             ytsrc_videos_para_mostrar_etc.push(ytelement);
           }
@@ -856,12 +871,12 @@ class Search_etc extends Component {
         {
           if (videos_etc[i].canal == canal) 
           {
-            if (videos_etc[i].comediante == comediante) 
+            if (videos_etc[i].categoria == categoria) 
           {
             videos_para_mostrar_etc.push(element);
             ytsrc_videos_para_mostrar_etc.push(ytelement);
           } 
-          else if(comediante == "No importa"){
+          else if(categoria == "No importa"){
             videos_para_mostrar_etc.push(element);
             ytsrc_videos_para_mostrar_etc.push(ytelement);
           }
@@ -870,12 +885,12 @@ class Search_etc extends Component {
             console.log("No se encontraron videos");
           }
           } else if(canal == "No importa"){
-            if (videos_etc[i].comediante == comediante) 
+            if (videos_etc[i].categoria == categoria) 
           {
             videos_para_mostrar_etc.push(element);
             ytsrc_videos_para_mostrar_etc.push(ytelement);
           } 
-          else if(comediante == "No importa"){
+          else if(categoria == "No importa"){
             videos_para_mostrar_etc.push(element);
             ytsrc_videos_para_mostrar_etc.push(ytelement);
           }
@@ -909,25 +924,23 @@ class Search_etc extends Component {
   }
 }
 
-function Mostrar_videos_etc() {
-  
+function Mostrar_videos_etc() {  
   const contenido = videos_para_mostrar_etc;
   const ytcontenido = ytsrc_videos_para_mostrar_etc;
-
-  for (let i = 0; i < contenido.length; i++) {
-    var mostrar = contenido.map(function () {
+  const  mostrar = contenido.map(function (todo, index) {   
+    console.log(todo);
+       
       return(
-        <div className="card resultado_busqueda">
+        <div className="card resultado_busqueda" key={todo}>
           <div className="card-body resultado_busqueda_body recomendacion_body">
-            <iframe id="ytplayer" src={contenido[i]} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
+            <iframe id="ytplayer" src={contenido[index]} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>              
           </div>
           <div className="card-footer">
-            <a href={ytcontenido[i]} className="btn btn-danger">Ver en youtube</a>
+            <a href={ytcontenido[index]} className="btn btn-danger">Ver en youtube</a>
           </div>
         </div>
       );
     })
-  }
   return(
       <div>
         <div>
@@ -941,17 +954,15 @@ function Mostrar_videos_etc() {
   );
 }
 
-videos_etc.push( new Video_etc("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla", "https://www.youtube.com/watch?v=bXcqSRzo6YI&t=567s") );
-videos_etc.push( new Video_etc("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla", "https://www.youtube.com/watch?v=bXcqSRzo6YI&t=567s") );
-videos_etc.push( new Video_etc("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla", "https://www.youtube.com/watch?v=bXcqSRzo6YI&t=567s") );
-videos_etc.push( new Video_etc("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla", "https://www.youtube.com/watch?v=bXcqSRzo6YI&t=567s") );
-videos_etc.push( new Video_etc("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla", "https://www.youtube.com/watch?v=bXcqSRzo6YI&t=567s") );
-videos_etc.push( new Video_etc("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla", "https://www.youtube.com/watch?v=bXcqSRzo6YI&t=567s") );
-videos_etc.push( new Video_etc("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla", "https://www.youtube.com/watch?v=bXcqSRzo6YI&t=567s") );
-videos_etc.push( new Video_etc("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla", "https://www.youtube.com/watch?v=bXcqSRzo6YI&t=567s") );
-videos_etc.push( new Video_etc("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla", "https://www.youtube.com/watch?v=bXcqSRzo6YI&t=567s") );
-videos_etc.push( new Video_etc("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla", "https://www.youtube.com/watch?v=bXcqSRzo6YI&t=567s") );
-videos_etc.push( new Video_etc("https://www.youtube.com/embed/bXcqSRzo6YI", "Mexico", "11-15 minutos", "Comedy Central", "Franco Escamilla", "https://www.youtube.com/watch?v=bXcqSRzo6YI&t=567s") );
+videos_etc.push( new Video_etc("https://www.youtube.com/embed/TAHXmgXt-9E", "Venezuela", "+30 minutos", "Escuela de nada", "Podcast", "https://www.youtube.com/watch?v=TAHXmgXt-9E") );
+videos_etc.push( new Video_etc("https://www.youtube.com/embed/v8KWyLEMFn8", "Colombia", "16-20 minutos", "Con Animo de Ofender", "Con Animo de Ofender", "https://www.youtube.com/watch?v=v8KWyLEMFn8&t=401s") );
+videos_etc.push( new Video_etc("https://www.youtube.com/embed/kzbHbMiLow8", "Colombia", "+30 minutos", "Juanpis Gonzales", "Entrevista", "https://www.youtube.com/watch?v=kzbHbMiLow8") );
+videos_etc.push( new Video_etc("https://www.youtube.com/embed/_tzLxEcvqEQ", "Mexico", "0-5 minutos", "Vete a la versh", "Animacion", "https://www.youtube.com/watch?v=_tzLxEcvqEQ") );
+videos_etc.push( new Video_etc("https://www.youtube.com/embed/7uhjdUDXMh8", "Colombia", "16-20 minutos", "Con Animo de Ofender", "Con Animo de Ofender", "https://www.youtube.com/watch?v=7uhjdUDXMh8&t=565s") );
+videos_etc.push( new Video_etc("https://www.youtube.com/embed/vThOpUjwswg", "Mexico", "0-5 minutos", "NEGAS", "Animacion", "https://www.youtube.com/watch?v=vThOpUjwswg"));
+videos_etc.push( new Video_etc("https://www.youtube.com/embed/CYo_RI6dfB0", "Venezuela", "+30 minutos", "Escuela de nada", "Podcast", "https://www.youtube.com/watch?v=CYo_RI6dfB0") );
+videos_etc.push( new Video_etc("https://www.youtube.com/embed/XN-rQ0DvKVQ", "Ecuador", "6-10 minutos", "enchufetv", "sketch", "https://www.youtube.com/watch?v=XN-rQ0DvKVQ&t=1s"));
+
 
 class Etc extends Component{
     constructor(props){
